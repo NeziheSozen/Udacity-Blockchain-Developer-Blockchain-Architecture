@@ -20,4 +20,4 @@ module.exports = {
       gas: 4465030,
       gasPrice: 100,
     }
-};
+}
