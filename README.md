@@ -22,12 +22,17 @@ This repository containts an Ethereum DApp that demonstrates a Supply Chain flow
 
 ![State Diagrams](images/state_diagram.PNG)
 
-## Libraries
-Truffle v5.0.2
-Ganache v2.7.1
-Solidity - 0.8.4
-Node v12.22.9
-Web3.js v1.7.4
+## Libraries and Why I used:
+
+Truffle v5.0.2: I use Truffle v5.0.2 to simplify the development, testing, and deployment of Ethereum smart contracts.
+
+Ganache v2.7.1: I use Ganache v2.7.1 to emulate a local Ethereum network for development and testing purposes.
+
+Solidity - 0.8.4: I use Solidity - 0.8.4 to write smart contracts on the Ethereum platform with its contract-oriented programming language.
+
+Node v12.22.9: I use Node v12.22.9 as the runtime environment for executing scripts and interacting with the Ethereum network.
+
+Web3.js v1.7.4: I use Web3.js v1.7.4 to interact with the Ethereum blockchain and develop decentralized applications using JavaScript.
 
 ## Smart Contract Address
 
@@ -128,8 +133,6 @@ npm run dev
 ## Built With
 
 * [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
-* [IPFS](https://ipfs.io/) - IPFS is the Distributed Web | A peer-to-peer hypermedia protocol
-to make the web faster, safer, and more open.
 * [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
 
 
@@ -142,4 +145,4 @@ See also the list of [contributors](https://github.com/your/project/contributors
 * Solidity
 * Ganache-cli
 * Truffle
-* IPFS
+
