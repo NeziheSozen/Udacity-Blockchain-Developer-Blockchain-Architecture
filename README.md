@@ -2,6 +2,39 @@
 
 This repository containts an Ethereum DApp that demonstrates a Supply Chain flow between a Seller and Buyer. The user story is similar to any commonly used supply chain process. A Seller can add items to the inventory system stored in the blockchain. A Buyer can purchase such items from the inventory system. Additionally a Seller can mark an item as Shipped, and similarly a Buyer can mark an item as Received.
 
+## Write Up
+
+### Sequence Diagrams:
+
+![Sequence Diagrams](images/sequence_diagram.PNG)
+
+![Sequence Diagrams](images/sequence_diagram_2.PNG)
+
+### Class Diagrams
+
+![Class Diagrams](images/class_diagram.PNG)
+
+### Activity Diagrams
+
+![Activity Diagrams](images/activity_diagram.PNG)
+
+### State Diagrams
+
+![State Diagrams](images/state_diagram.PNG)
+
+## Libraries
+Truffle v5.0.2
+Ganache v2.7.1
+Solidity - 0.8.4
+Node v12.22.9
+Web3.js v1.7.4
+
+## Smart Contract Address
+
+0x6ECDf54b2cd6d0a6b8b36fC40bEA90B30a8f685F
+
+https://goerli.etherscan.io/address/0x6ecdf54b2cd6d0a6b8b36fc40bea90b30a8f685f
+
 The DApp User Interface when running should look like...
 
 ![truffle test](images/ftc_product_overview.png)
