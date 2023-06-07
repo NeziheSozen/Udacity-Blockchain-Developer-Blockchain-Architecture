@@ -14,6 +14,7 @@ contract('SupplyChain', function(accounts) {
     const originFarmInformation = "Yarray Valley"
     const originFarmLatitude = "-38.239770"
     const originFarmLongitude = "144.341490"
+    var productID = sku + upc
     const productNotes = "Best beans for Espresso"
     const productPrice = web3.utils.toWei("1", "ether")
     var itemState = 0
@@ -255,6 +256,7 @@ contract('SupplyChain', function(accounts) {
         // Verify the result set:
         assert.equal(resultBufferTwo[0], sku, 'Error: Invalid item SKU')
         assert.equal(resultBufferTwo[1], upc, 'Error: Invalid item UPC')
+	assert.equal(resultBufferTwo[2], productID, 'Error: Missing or Invalid productID')
         assert.equal(resultBufferTwo[3], productNotes, 'Error: Missing or Invalid originFarmerID')
         assert.equal(resultBufferTwo[4], productPrice, 'Error: Missing or Invalid originFarmName')
         assert.equal(resultBufferTwo[5], 7, 'Error: Missing or Invalid originFarmInformation') // Purchased
