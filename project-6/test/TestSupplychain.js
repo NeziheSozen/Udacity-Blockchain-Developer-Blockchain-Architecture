@@ -14,7 +14,6 @@ contract('SupplyChain', function(accounts) {
     const originFarmInformation = "Yarray Valley"
     const originFarmLatitude = "-38.239770"
     const originFarmLongitude = "144.341490"
-    var productID = sku + upc
     const productNotes = "Best beans for Espresso"
     const productPrice = web3.utils.toWei("1", "ether")
     var itemState = 0
@@ -66,18 +65,8 @@ contract('SupplyChain', function(accounts) {
     // 1st Test
     it("Testing smart contract function harvestItem() that allows a farmer to harvest coffee", async() => {
         const supplyChain = await SupplyChain.deployed()
-		
-													  
-								
-		
-											  
-										   
-										 
-							   
-		  
-
         // Mark an item as Harvested by calling function harvestItem()
-        var event = await supplyChain.harvestItem(upc, originFarmerID, originFarmName, originFarmInformation, originFarmLatitude, originFarmLongitude, productID, productNotes)
+        var event = await supplyChain.harvestItem(upc, originFarmerID, originFarmName, originFarmInformation, originFarmLatitude, originFarmLongitude, productNotes)
         
         // Determine if the event has been emitted using `truffleAssert`
         truffleAssert.eventEmitted(event, 'Harvested');
@@ -86,8 +75,7 @@ contract('SupplyChain', function(accounts) {
         const resultBufferOne = await supplyChain.fetchItemBufferOne.call(upc)
         const resultBufferTwo = await supplyChain.fetchItemBufferTwo.call(upc)
 
-        // Verify the result set
-																		
+        // Verify the result set																	
 																		
         assert.equal(resultBufferOne[1], upc, 'Error: Missing or Invalid upc')
         assert.equal(resultBufferOne[3], originFarmerID, 'Error: Missing or Invalid originFarmerID')
@@ -101,13 +89,7 @@ contract('SupplyChain', function(accounts) {
 
     // 2nd Test
     it("Testing smart contract function processItem() that allows a farmer to process coffee", async() => {
-        const supplyChain = await SupplyChain.deployed();
-		
-													  
-		
-		
-											  
-        
+        const supplyChain = await SupplyChain.deployed();  
         // Mark an item as Processed by calling function processItem()
         var event = await supplyChain.processItem(upc, {from: originFarmerID});
 
@@ -124,13 +106,6 @@ contract('SupplyChain', function(accounts) {
     // 3rd Test
     it("Testing smart contract function packItem() that allows a farmer to pack coffee", async() => {
         const supplyChain = await SupplyChain.deployed()
-		
-													  
-		
-		
-										   
-		
-
         // Mark an item as Packed by calling function packItem()
         var event = await supplyChain.packItem(upc, {from: originFarmerID});
 
@@ -147,13 +122,6 @@ contract('SupplyChain', function(accounts) {
     // 4th Test
     it("Testing smart contract function sellItem() that allows a farmer to sell coffee", async() => {
         const supplyChain = await SupplyChain.deployed()
-        
-													  
-		
-		
-											
-		
-
         // Mark an item as ForSale by calling function sellItem()
         var event = await supplyChain.sellItem(upc, productPrice, {from: originFarmerID});
 
@@ -287,7 +255,6 @@ contract('SupplyChain', function(accounts) {
         // Verify the result set:
         assert.equal(resultBufferTwo[0], sku, 'Error: Invalid item SKU')
         assert.equal(resultBufferTwo[1], upc, 'Error: Invalid item UPC')
-        assert.equal(resultBufferTwo[2], productID, 'Error: Missing or Invalid productID')
         assert.equal(resultBufferTwo[3], productNotes, 'Error: Missing or Invalid originFarmerID')
         assert.equal(resultBufferTwo[4], productPrice, 'Error: Missing or Invalid originFarmName')
         assert.equal(resultBufferTwo[5], 7, 'Error: Missing or Invalid originFarmInformation') // Purchased
